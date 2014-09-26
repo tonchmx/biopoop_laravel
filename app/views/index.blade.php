@@ -4,8 +4,7 @@
 @stop
 
 @section('content')
-
-<div class="jumbotron">
+	<div class="jumbotron">
 		<div class="container home">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 producto">
@@ -18,7 +17,7 @@
 							Comprar
 						</a>
 						<span class="col-xs-2"></span>
-						<a href="#como" class="btn btn-descubre btn-lg col-xs-5" role="button">
+						<a href="#como" class="btn btn-primario btn-lg col-xs-5" role="button">
 							Descubre
 						</a>		
 					</div>
@@ -53,6 +52,39 @@
 	</div>
 
 	<div class="gente" id="gente">
+		<div class="medios">
+			<div class="container">
+				<h3>Biopoop en los medios</h3>
+				<div class="row">
+				  
+				  <div class="col-xs-12 col-sm-6">
+				  	<div class="video-container">
+				  		<iframe width="560" height="315" src="//www.youtube.com/embed/alC8tT5JwHs" frameborder="0" allowfullscreen></iframe>	
+				  	</div>
+				  </div>
+				  <div class="col-xs-12 col-sm-1">
+				  	<p></p>
+				  </div>
+				  <div class="col-xs-12 col-sm-5">
+				  	<p>
+				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
+				  	</p>
+				  	<p>
+				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
+				  	</p>
+				  	<p>
+				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
+				  	</p>
+				  	<p>
+				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
+				  	</p>
+				  	<p>
+				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
+				  	</p>
+				  </div>
+				</div>
+			</div>
+		</div>
 		<div class="comentarios">
 			<div class="container">
 				<h2>¿Qué dice la gente</h2>
@@ -83,43 +115,26 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="comprar" id="comprar">
+	<div id="donde_comprar">
 		<div class="container">
-			<h2>Comprar</h2>
-			<div class="row">
-				<span class="col-sm-1"></span>
-				<div class="col-xs-12 col-sm-3">
-					<table class="col-xs-12 table">
-						<tr class="p1"><td><h3>Paseo corto</h3></td></tr>
-						<tr><td>$99.99</td></tr>
-						<tr><td>10 bolsas</td></tr>
-						<tr><td>¡Sticker de regalo!</td></tr>
-						<tr class="btn-comprar"><td><h3>Comprar</h3></td></tr>
-					</table>
-				</div>
-				<div class="col-xs-12 col-sm-4">
-					<table class="col-xs-12 table">
-						<tr class="p2"><td><h3>Paseo largo</h3></td></tr>
-						<tr><td>$199.99</td></tr>
-						<tr><td>25 bolsas</td></tr>
-						<tr><td>¡Playera de regalo!</td></tr>
-						<tr class="btn-comprar"><td><h3>Comprar</h3></td></tr>
-					</table>
-				</div>
-				<div class="col-xs-12 col-sm-3">
-					<table class="col-xs-12 table">
-						<tr class="p1"><td><h3>¡Ármalo!</h3></td></tr>
-						<tr><td>$??.??</td></tr>
-						<tr><td><input type="number" placeholder="26"> bolsas</td></tr>
-						<tr><td>¡Regalo sorpresa!</td></tr>
-						<tr class="btn-comprar"><td><h3>Comprar</h3></td></tr>
-					</table>
-				</div>
-				<span class="col-sm-1"></span>
+			<h2>¿Dónde comprar?</h2>
+			<div id="mapa" class="col-xs-12 col-sm-8"></div>	
+			<div id="lista" class="col-xs-12 col-sm-4">
+				<ul></ul>
+				<div>
+					<h3>¿No aparece tu ciudad en el mapa?</h3>
+					<p>
+						Estamos trabajando arduamente para lograr que Biopoop se venda en todas partes. Si tienes algún negocio o quieres ayudarnos vendiendo nuestro producto, porfavor contáctanos.
+					</p>
+					<a href="#contacto" class="btn btn-primario btn-lg" role="button" id="btn-contacto">
+						Contáctanos
+					</a>	
+				</div>	
 			</div>
+			
 		</div>
 	</div>
+	
 
 	<div class="contacto" id="contacto">
 		<div class="container">
@@ -146,7 +161,4 @@
 			</div>
 		</div>
 	</div>
-
-	
-	
 @stop
