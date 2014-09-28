@@ -19,6 +19,6 @@ Route::post('login', 'AdminController@doLogin');
 Route::get('logout', 'AdminController@doLogout');
 
 // DASHBOARD
-Route::group(array('prefix' => 'admin'), function(){
+Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 	Route::get('dashboard', 'AdminController@getDashboard');
 });
