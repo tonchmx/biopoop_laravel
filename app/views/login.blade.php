@@ -15,6 +15,7 @@ window.setTimeout(function() {
 });
 //-->
 </script>
+<div class="container">
 	{{ Form::open(array('url' => 'login')) }}
 		<h1>Login</h1>
 		@if($errors->first('username') != '' || $errors->first('password') != '')
@@ -41,17 +42,17 @@ window.setTimeout(function() {
 		@endif
 
 		<p>
-			{{ Form::label('username', 'Username') }}
-			{{ Form::text('username', Input::old('username')) }}
+			{{ Form::text('username', '', array('class' => 'form-control', 'placeholder' => 'Username')) }}
 		</p>
 
 		<p>
-			{{ Form::label('password', 'Password') }}
-			{{ Form::password('password') }}
+			{{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password')) }}
 		</p>
 
 		<p>
-			{{ Form::submit('Submit!') }}
+			{{ Form::submit('Submit!', array('class' => 'btn btn-comprar btn-lg btn-lock')) }}
 		</p>
 	{{ Form::close() }}
+</div>
+	
 @stop
