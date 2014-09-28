@@ -14,11 +14,23 @@
 Route::get('/', 'IndexController@index');	
 
 // LOGIN
-Route::get('login', 'AdminController@getLogin');
+Route::get('login', array('as' => 'login', 'uses' => 'AdminController@getLogin'));
 Route::post('login', 'AdminController@doLogin');
-Route::get('logout', 'AdminController@doLogout');
+Route::get('logout', array('as' => 'logout', 'uses' => 'AdminController@doLogout'));
 
 // DASHBOARD
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
-	Route::get('dashboard', 'AdminController@getDashboard');
+	// DASHBOARD
+	Route::get('dashboard', array('as' => 'dashboard','uses' => 'AdminController@getDashboard'));
+	// COMERCIALIZADORAS
+	Route::group(array('prefix'=>'comercializadoras'), function(){
+		Route::get('/', array('as' => 'comercializadoras', 'uses' => 'ComercializadoraController@index'));
+		Route::get('/nueva', array('as' => 'comercializadoras/nueva', 'uses' => 'ComercializadoraController@create'));
+		Route::post('/', 'ComercializadoraController@store');
+		Route::get('/{id}', 'ComercializadoraController@show');
+		Route::get('/{id}/editar', 'ComercializadoraController@edit');
+		Route::put('/{id}', 'ComercializadoraController@update');
+		Route::delete('/{id}', 'ComercializadoraController@destroy');
+	});
+
 });
