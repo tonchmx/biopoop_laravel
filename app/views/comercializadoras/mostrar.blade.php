@@ -10,7 +10,14 @@
 
 @section('content')
 	<div class="container">
-		<h1>Mostrando {{ $comercializadora->nombre}} </h1>	
+		<div class="jumbotron">
+			<h1>{{ $comercializadora->nombre}}</h1>
+			<p>{{ $comercializadora->direccion}}, {{$comercializadora->ciudad}}, {{$comercializadora->estado}}</p>
+			<p>Teléfono: {{$comercializadora->telefono}}</p>
+			<div id="mapaComercializadora"></div>
+		</div>
+		<input type="hidden" id="lat" value="{{$comercializadora->lat}}">
+		<input type="hidden" id="log" value="{{$comercializadora->log}}">
 	</div>
 	
 @stop

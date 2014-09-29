@@ -47,12 +47,23 @@
 							<td>{{ $comercializadora->estado }}</td>
 							<td>{{ $comercializadora->telefono}}</td>
 							<td>
-								<a href="{{ URL::action('ComercializadoraController@show', array($comercializadora->id))}}"><span class="glyphicon glyphicon-eye-open"></span></a>
-								<a href="{{ URL::action('ComercializadoraController@edit', array($comercializadora->id))}}"><span class="glyphicon glyphicon-edit"></span></a>
-								{{ Form::open(array('url' => '/admin/comercializadoras/' . $comercializadora->id, 'class' => 'pull-right'))}}
-									{{ Form::hidden('_method', 'DELETE') }}
-									<a href="javascript:;" onClick="parentNode.submit();"><span class="glyphicon glyphicon-remove"></span></a>
-								{{ Form::close() }}
+								<div class="row">
+									<div class="col-xs-1">
+										<a href="{{ URL::action('ComercializadoraController@show', array($comercializadora->id))}}"><span class="glyphicon glyphicon-eye-open"></span></a>
+									</div>
+									<div class="col-xs-1">
+										<a href="{{ URL::action('ComercializadoraController@edit', array($comercializadora->id))}}"><span class="glyphicon glyphicon-edit"></span></a>
+									</div>
+									<div class="col-xs-1">
+										{{ Form::open(array('url' => '/admin/comercializadoras/' . $comercializadora->id))}}
+											{{ Form::hidden('_method', 'DELETE') }}
+											<a href="javascript:;" onClick="parentNode.submit();"><span class="glyphicon glyphicon-remove"></span></a>
+										{{ Form::close() }}
+									</div>
+								</div>
+								
+								
+								
 							</td>
 						</tr>
 					@endforeach

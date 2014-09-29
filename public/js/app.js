@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var attribution = "<a href='http://www.onmymind.com'>On My Mind®</a>"
-	if(window.location.pathname == '/'){
+	if(window.location.pathname === '/'){
 		var map = L.map('mapa');
 		
 		navigator.geolocation.getCurrentPosition(success, error, options);
@@ -59,5 +59,8 @@ $(document).ready(function(){
 		$("#logo").fileinput({'showUpload':false});
 	}
 	
+	function eliminarComercializadora(){
+		console.log("Eliminar");
+	}
 
 });
