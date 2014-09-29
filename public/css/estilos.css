@@ -56,6 +56,7 @@ body{padding-top:51px;font-family:'Open Sans',sans-serif;color:#3f393b}
 .comprar{color:#fff;background-color:#3f393b;text-align:center;}
 .mapa{color:#fff;background-color:#3f393b;text-align:center;}
 .comprar .btn-comprar{background-color:#d9d6d7;color:#3f393b}
+.btn-comprar:hover{color:#e1ae33}
 .comprar .p1{background-color:#9f9b9d}
 .comprar .p2{background-color:#f8d545}
 .comprar table{color:#3f393b;background-color:#fff}
@@ -69,6 +70,8 @@ body{padding-top:51px;font-family:'Open Sans',sans-serif;color:#3f393b}
 .video-container iframe,  .video-container object,  .video-container embed {position: absolute;top: 0;left: 0;width: 100%;height: 100%}
 #donde_comprar h2{text-align: center}
 #mapa{height: 500px;}
+#mapaComercializadora{height: 85%;}
+.main{margin-bottom: 3%;}
 @media screen and (min-width:991px){.info{padding-top:5%}
 }@media screen and (max-width:767px){.como img{display:inline;width:50%}
 }
