@@ -75,7 +75,10 @@ class ComercializadoraController extends BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$comercializadora = Comercializadora::find($id);
+
+		return View::make('comercializadoras.mostrar')
+			->with('comercializadora', $comercializadora);
 	}
 
 
@@ -87,7 +90,10 @@ class ComercializadoraController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$comercializadora = Comercializadora::find($id);
+
+		return View::make('comercializadoras.editar')
+			->with('comercializadora', $comercializadora);
 	}
 
 
@@ -99,7 +105,36 @@ class ComercializadoraController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$rules = array(
+			'nombre' => 'required',
+			'direccion' => 'required',
+			'lat' => 'required',
+			'log' => 'required',
+			'estado' => 'required',
+			'ciudad' => 'required',
+			'telefono' => 'required'
+		);
+		$validator = Validator::make(Input::all(), $rules);
+		if($validator->passes()) {
+			$comercializadora = Comercializadora::find($id);
+			$comercializadora->nombre = Input::get('nombre');
+			$comercializadora->direccion = Input::get('direccion');
+			$comercializadora->lat = Input::get('lat');
+			$comercializadora->log = Input::get('log');
+			$comercializadora->estado = Input::get('estado');
+			$comercializadora->ciudad = Input::get('ciudad');
+			$comercializadora->telefono = Input::get('telefono');
+			$comercializadora->logo = Input::get('logo');
+			$comercializadora->url_compra = Input::get('url_compra');
+			$comercializadora->save();
+			// redirect
+			Session::flash('message', '¡Comercializadora actualizada!');
+			return Redirect::action('ComercializadoraController@index');
+		} else {
+			return Redirect::action('ComercializadoraController@create')
+				->withErrors($validator)
+				->withInput();
+		}
 	}
 
 
@@ -111,7 +146,10 @@ class ComercializadoraController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$comercializadora = Comercializadora::find($id);
+		$comercializadora->delete();
+		Session::flash('message', 'Comercializadora eliminada');
+		return Redirect::action('ComercializadoraController@index');
 	}
 
 

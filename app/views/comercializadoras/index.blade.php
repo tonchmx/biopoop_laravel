@@ -49,7 +49,10 @@
 							<td>
 								<a href="{{ URL::action('ComercializadoraController@show', array($comercializadora->id))}}"><span class="glyphicon glyphicon-eye-open"></span></a>
 								<a href="{{ URL::action('ComercializadoraController@edit', array($comercializadora->id))}}"><span class="glyphicon glyphicon-edit"></span></a>
-								<a href="{{ URL::action('ComercializadoraController@destroy', array($comercializadora->id))}}"><span class="glyphicon glyphicon-remove"></span></a>
+								{{ Form::open(array('url' => '/admin/comercializadoras/' . $comercializadora->id, 'class' => 'pull-right'))}}
+									{{ Form::hidden('_method', 'DELETE') }}
+									<a href="javascript:;" onClick="parentNode.submit();"><span class="glyphicon glyphicon-remove"></span></a>
+								{{ Form::close() }}
 							</td>
 						</tr>
 					@endforeach

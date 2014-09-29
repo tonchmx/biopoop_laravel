@@ -27,12 +27,12 @@ $(document).ready(function(){
 		.addTo(map);
 	}
 
-	if(window.location.pathname == "/admin/comercializadoras/nueva"){
+	if($("#main").has("#mapaComercializadora")){
 		var map = L.map('mapaComercializadora');
 		var lat = $("#lat").val();
 		var log = $("#log").val();
 		if(lat != '' || log != ''){
-			map.setView([lat, log], 10);
+			map.setView([lat, log], 14);
 			var marker = new L.marker([lat, log], {draggable:'true'});
 			map.addLayer(marker);
 		} else {

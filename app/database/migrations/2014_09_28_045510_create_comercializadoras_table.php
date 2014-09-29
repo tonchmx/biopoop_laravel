@@ -18,8 +18,8 @@ class CreateComercializadorasTable extends Migration {
 			$table->increments('id');
 			$table->string('nombre');
 			$table->string('direccion');
-			$table->decimal('lat');
-			$table->decimal('log');
+			$table->double('lat');
+			$table->double('log');
 			$table->string('logo')->nullable();
 			$table->string('url_compra')->nullable();
 			$table->string('estado');
