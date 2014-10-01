@@ -1,15 +1,6 @@
-@extends('layout')
-@include('includes.menu')
-@section('opciones')
-	<div class="collapse navbar-collapse" id="menu">
-	<ul class="nav navbar-nav navbar-right">
-		<li>{{HTML::link('/logout', 'Logout')}}</a></li>
-  	</ul>
-</div>
-@stop
+@extends('admin.dashboard')
 
-@section('content')
-	<div class="container">
+@section('controller')
 		<div class="row">
 			<div class="col-sm-10">
 				<h1>Comercializadoras</h1>
@@ -61,14 +52,10 @@
 										{{ Form::close() }}
 									</div>
 								</div>
-								
-								
-								
 							</td>
 						</tr>
 					@endforeach
 				</tbody>
 			</table>
 		@endif
-	</div>
 @stop
