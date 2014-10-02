@@ -15,9 +15,9 @@
 			<div class="col-xs-6">
 				<h2>{{ $totalComercializadoras }}</h2>
 				@if($totalComercializadoras == 1)
-					<p>comercializadoras</p>
-				@else
 					<p>comercializadora</p>
+				@else
+					<p>comercializadoras</p>
 				@endif
 				
 			</div>	

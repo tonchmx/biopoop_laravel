@@ -15,6 +15,11 @@ class NoticiaController extends BaseController {
 		->with('noticias', $noticias);
 	}
 
+	public function getNoticiasJSON()
+	{
+		return Response::json(Noticia::all());
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.

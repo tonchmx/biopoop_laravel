@@ -18,6 +18,12 @@ Route::get('login', array('as' => 'login', 'uses' => 'AdminController@getLogin')
 Route::post('login', 'AdminController@doLogin');
 Route::get('logout', array('as' => 'logout', 'uses' => 'AdminController@doLogout'));
 
+// API
+Route::group(array('prefix' => 'api'), function(){
+	Route::get('/noticias', 'NoticiaController@getNoticiasJSON');
+	Route::get('/comercializadoras', 'ComercializadoraController@getComercializadorasJSON');
+});
+
 // DASHBOARD
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 	// DASHBOARD

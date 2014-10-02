@@ -6,29 +6,48 @@ $(document).ready(function(){
 	
 	if(window.location.pathname === '/'){
 		var map = L.map('mapa');
-		
-		navigator.geolocation.getCurrentPosition(success, error, options);
 
 		function success(pos) {
 		  var crd = pos.coords;
 		  map.setView([crd.latitude, crd.longitude], 7);
-		  L.marker([crd.latitude, crd.longitude]).addTo(map);
 		};
 		function error(err) {
-		  console.warn('ERROR(' + err.code + '): ' + err.message);
+			alert('No pudimos encontrar tu ubicación :( ¡Te pondremos en un lugar central!');
+			map.setView([19.42, -99.13], 5);
+		  	console.warn('ERROR(' + err.code + '): ' + err.message);
 		};
 		var options = {
 		  enableHighAccuracy: true,
-		  timeout: 5000,
+		  timeout: 10000,
 		  maximumAge: 0
 		};
 		
+		navigator.geolocation.getCurrentPosition(success, error, options);
 		L.tileLayer(
 			'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
 			{
 				attribution: attribution
 			})
 		.addTo(map);
+
+		$.ajax({
+			url: '/api/comercializadoras',
+			type: 'GET',
+			dataType: 'json'
+		})
+			.done(function(response){
+				$.each(response, function(i, comercializadora){
+					var marker = L.marker([comercializadora.lat, comercializadora.log]).addTo(map);
+					var mensaje = "<b>" + comercializadora.nombre +
+									"</b></br>" + comercializadora.direccion + 
+									"</br>" + comercializadora.ciudad + 
+									", " + comercializadora.estado;
+					if(comercializadora.url_compra != ""){
+						mensaje += "</br><a href='http://" + comercializadora.url_compra + "'>¡Compra directa!</a>"
+					}
+					marker.bindPopup(mensaje).openPopup();
+				});
+			});
 	}
 
 	if($("#main").has("#mapaComercializadora")){

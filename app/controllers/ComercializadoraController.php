@@ -15,7 +15,10 @@ class ComercializadoraController extends BaseController {
 		->with('comercializadoras', $comercializadoras);
 	}
 
-
+	public function getComercializadorasJSON()
+	{
+		return Response::json(Comercializadora::all());
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
