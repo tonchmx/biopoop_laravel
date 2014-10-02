@@ -1,5 +1,9 @@
 $(document).ready(function(){
 	var attribution = "<a href='http://www.onmymind.com'>On My Mind®</a>"
+	
+	
+	$("#logo").fileinput({'showUpload':false});	
+	
 	if(window.location.pathname === '/'){
 		var map = L.map('mapa');
 		
@@ -56,11 +60,6 @@ $(document).ready(function(){
 			$("#lat").val(position.lat);
 			$("#log").val(position.lng);
 		});
-		$("#logo").fileinput({'showUpload':false});
 	}
 	
-	function eliminarComercializadora(){
-		console.log("Eliminar");
-	}
-
 });

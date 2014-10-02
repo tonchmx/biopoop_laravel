@@ -3,7 +3,8 @@
 @section('controller')
 		<div class="row">
 			<div class="col-sm-10">
-				<h1>Comercializadoras</h1>
+				<h2>Comercializadoras</h2>
+				<hr>
 			</div>
 			<div class="col-sm-1" style="margin-top:20px;">
 				<a href="{{ URL::action('ComercializadoraController@create') }}" class="btn btn-primario" role="button">Agregar comercializadora</a>	

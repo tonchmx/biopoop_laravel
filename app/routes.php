@@ -32,5 +32,15 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 		Route::put('/{id}', 'ComercializadoraController@update');
 		Route::delete('/{id}', 'ComercializadoraController@destroy');
 	});
+	// Noticias
+	Route::group(array('prefix' => 'noticias'), function(){
+		Route::get('/', array('as' => 'noticias', 'uses' => 'NoticiaController@index'));
+		Route::get('/nueva', array('as' => 'noticias/nueva', 'uses' => 'NoticiaController@create'));
+		Route::post('/', 'NoticiaController@store');
+		Route::get('/{id}', 'NoticiaController@show');
+		Route::get('/{id}/editar', 'NoticiaController@edit');
+		Route::put('/{id}', 'NoticiaController@update');
+		Route::delete('/{id}', 'NoticiaController@destroy');
+	});
 
 });

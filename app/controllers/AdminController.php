@@ -12,8 +12,10 @@ class AdminController extends BaseController {
 
 	public function getDashboard()
 	{
-		// return View::make('admin/dashboard');
-		return View::make('admin.dashboard');
+		$totalComercializadoras = Comercializadora::all()->count();
+		$totalNoticias = Noticia::all()->count();
+		return View::make('admin.info')
+			->with(array('totalComercializadoras' => $totalComercializadoras, 'totalNoticias' => $totalNoticias));
 	}
 
 	public function getLogin()

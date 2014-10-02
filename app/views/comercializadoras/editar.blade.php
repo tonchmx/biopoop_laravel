@@ -1,16 +1,9 @@
-@extends('layout')
-@include('includes.menu')
-@section('opciones')
-	<div class="collapse navbar-collapse" id="menu">
-	<ul class="nav navbar-nav navbar-right">
-		<li>{{HTML::link('/logout', 'Logout')}}</a></li>
-  	</ul>
-</div>
-@stop
+@extends('admin.dashboard')
 
-@section('content')
+@section('controller')
 	<div class="container">
 		<h2>Editar comercializadora</h2>
+		<hr>
 		<div class="col-sm-5">
 
 			@if(sizeof($errors) > 0)

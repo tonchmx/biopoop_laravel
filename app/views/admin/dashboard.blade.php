@@ -13,25 +13,18 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-				            <li class="active"><a href="#">Overview</a></li>
-				            <li><a href="#">Reports</a></li>
-				            <li><a href="#">Analytics</a></li>
-				            <li><a href="#">Export</a></li>
-				          </ul>
-				          <ul class="nav nav-sidebar">
-				            <li><a href="">Nav item</a></li>
-				            <li><a href="">Nav item again</a></li>
-				            <li><a href="">One more nav</a></li>
-				            <li><a href="">Another nav item</a></li>
-				            <li><a href="">More navigation</a></li>
-				          </ul>
-				          <ul class="nav nav-sidebar">
-				            <li><a href="">Nav item again</a></li>
-				            <li><a href="">One more nav</a></li>
-				            <li><a href="">Another nav item</a></li>
-				          </ul>
+		            <li><a href="/admin/dashboard">Inicio</a></li>
+	          	</ul>
+				<ul class="nav nav-sidebar">
+		            <li><a href="{{ URL::action('ComercializadoraController@index') }}">Comercializadoras</a></li>
+		            <li><a href="{{ URL::action('ComercializadoraController@create') }}">Nueva Comercializadora</a></li>
+		        </ul>
+		        <ul class="nav nav-sidebar">
+		            <li><a href="{{ URL::action('NoticiaController@index') }}">Noticias</a></li>
+		            <li><a href="{{ URL::action('NoticiaController@create') }}">Nueva Noticia</a></li>
+  	            </ul>
 			</div>
-			<div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-2">
+			<div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-2 main">
 				@yield('controller')
 			</div>
 		</div>
