@@ -22,12 +22,14 @@ Route::get('logout', array('as' => 'logout', 'uses' => 'AdminController@doLogout
 Route::group(array('prefix' => 'api'), function(){
 	Route::get('/noticias', 'NoticiaController@getNoticiasJSON');
 	Route::get('/comercializadoras', 'ComercializadoraController@getComercializadorasJSON');
+	Route::get('/sponsors', 'SponsorController@getSponsorsJSON');
 });
 
 // DASHBOARD
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 	// DASHBOARD
 	Route::get('dashboard', array('as' => 'dashboard','uses' => 'AdminController@getDashboard'));
+
 	// COMERCIALIZADORAS
 	Route::group(array('prefix'=>'comercializadoras'), function(){
 		Route::get('/', array('as' => 'comercializadoras', 'uses' => 'ComercializadoraController@index'));
@@ -38,7 +40,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 		Route::put('/{id}', 'ComercializadoraController@update');
 		Route::delete('/{id}', 'ComercializadoraController@destroy');
 	});
-	// Noticias
+	// NOTICIAS
 	Route::group(array('prefix' => 'noticias'), function(){
 		Route::get('/', array('as' => 'noticias', 'uses' => 'NoticiaController@index'));
 		Route::get('/nueva', array('as' => 'noticias/nueva', 'uses' => 'NoticiaController@create'));
@@ -49,4 +51,14 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function(){
 		Route::delete('/{id}', 'NoticiaController@destroy');
 	});
 
+	// SPONSORS
+	Route::group(array('prefix' => 'sponsors'), function(){
+		Route::get('/', array('as' => 'sponsors', 'uses' => 'SponsorController@index'));
+		Route::get('/nueva', array('as' => 'sponsors/nueva', 'uses' => 'SponsorController@create'));
+		Route::post('/', 'SponsorController@store');
+		Route::get('/{id}', 'SponsorController@show');
+		Route::get('/{id}/editar', 'SponsorController@edit');
+		Route::put('/{id}', 'SponsorController@update');
+		Route::delete('/{id}', 'SponsorController@destroy');
+	});
 });

@@ -1,14 +1,14 @@
 @extends('admin.dashboard')
 @section('controller')
-	<div class="container">
-		<div class="col-sm-10">
-			<h2>Noticias</h2>	
-			<hr>
+		<div class="row">
+			<div class="col-sm-10">
+				<h2>Noticias</h2>	
+				<hr>
+			</div>
+			<div class="col-sm-1" style="margin-top:20px">
+				<a href="{{ URL::action('NoticiaController@create') }}" class="btn btn-primario" role="button">Agregar noticia</a>
+			</div>
 		</div>
-		<div class="col-sm" style="margin-top:20px">
-			<a href="{{ URL::action('NoticiaController@create') }}" class="btn btn-primario" role="button">Agregar noticia</a>
-		</div>
-		<br>
 		@if(Session::has('message'))
 			<div class="alert alert-info">{{ Session::get('message') }}</div>
 		@endif
@@ -53,7 +53,7 @@
 				</tbody>
 			</table>
 		@endif
-	</div>
+	
 
 	
 @stop

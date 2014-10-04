@@ -23,6 +23,10 @@
 		            <li><a href="{{ URL::action('NoticiaController@index') }}">Noticias</a></li>
 		            <li><a href="{{ URL::action('NoticiaController@create') }}">Nueva Noticia</a></li>
   	            </ul>
+  	            <ul class="nav nav-sidebar">
+  	            	<li><a href="{{ URL::action('SponsorController@index') }}">Sponsors</a></li>
+  	            	<li><a href="{{ URL::action('SponsorController@create') }}">Nuevo Sponsor</a></li>
+  	            </ul>
 			</div>
 			<div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-2 main">
 				@yield('controller')
