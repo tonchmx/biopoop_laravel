@@ -3,6 +3,7 @@
 <title>Biopoop</title>
 
 <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/leaflet.css" />
 <link rel="stylesheet" href="/css/estilos.css">
 <link rel="stylesheet" href="/css/fileinput.min.css">

@@ -56,31 +56,12 @@
 			<div class="container">
 				<h3>Biopoop en los medios</h3>
 				<div class="row">
-				  
 				  <div class="col-xs-12 col-sm-6">
-				  	<div class="video-container">
-				  		<iframe width="560" height="315" src="//www.youtube.com/embed/alC8tT5JwHs" frameborder="0" allowfullscreen></iframe>	
+				  	<div class="video-container" style="margin-bottom:10px;">
+				  		<iframe width="560" height="315" src="//www.youtube.com/embed/alC8tT5JwHs" frameborder="0" allowfullscreen></iframe>
 				  	</div>
 				  </div>
-				  <div class="col-xs-12 col-sm-1">
-				  	<p></p>
-				  </div>
-				  <div class="col-xs-12 col-sm-5">
-				  	<p>
-				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
-				  	</p>
-				  	<p>
-				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
-				  	</p>
-				  	<p>
-				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
-				  	</p>
-				  	<p>
-				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
-				  	</p>
-				  	<p>
-				  		<img class="img-responsive" src="http://placehold.it/560x70&text=nota">
-				  	</p>
+				  <div class="col-xs-12 col-sm-6" id="notasPeriodisticas">
 				  </div>
 				</div>
 			</div>
@@ -88,6 +69,9 @@
 		<div class="comentarios">
 			<div class="container">
 				<h2>¿Qué dice la gente</h2>
+				<div id="twitter">
+					
+				</div>
 				<article class="col-xs-12 col-sm-4">
 					<img class="img-circle"src="http://placehold.it/150x150&text=foto+persona">
 					<p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</i></p>
@@ -107,10 +91,7 @@
 			<div class="sponsors">
 				<div class="container">
 					<h3>Ellos confían en nosotros</h3>
-					<img src="http://placehold.it/150x40&text=sponsor">	
-					<img src="http://placehold.it/150x40&text=sponsor">	
-					<img src="http://placehold.it/150x40&text=sponsor">	
-					<img src="http://placehold.it/150x40&text=sponsor">	
+					<div id="sponsors"></div>	
 				</div>
 			</div>
 		</div>

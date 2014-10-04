@@ -14,8 +14,9 @@ class AdminController extends BaseController {
 	{
 		$totalComercializadoras = Comercializadora::all()->count();
 		$totalNoticias = Noticia::all()->count();
+		$totalSponsors = Sponsor::all()->count();
 		return View::make('admin.info')
-			->with(array('totalComercializadoras' => $totalComercializadoras, 'totalNoticias' => $totalNoticias));
+			->with(array('totalComercializadoras' => $totalComercializadoras, 'totalNoticias' => $totalNoticias, 'totalSponsors' => $totalSponsors));
 	}
 
 	public function getLogin()

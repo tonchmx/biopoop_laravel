@@ -48,6 +48,17 @@ $(document).ready(function(){
 					marker.bindPopup(mensaje).openPopup();
 				});
 			});
+
+		$.ajax({
+			url: '/api/noticias',
+			type: 'GET',
+			dataType: 'json'
+		})
+			.done(function(response){
+				$.each(response, function(i, noticia){
+					$("#notasPeriodisticas").append(noticia.nombre);
+				});
+			});
 	}
 
 	if($("#main").has("#mapaComercializadora")){

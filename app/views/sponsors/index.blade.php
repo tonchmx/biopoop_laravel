@@ -32,7 +32,7 @@
 				<tr>
 					<td>{{ $sponsor->nombre }}</td>
 					<td>
-						<div class="row">
+						<div class="row acciones">
 							<div class="col-xs-1">
 								<a href="{{ URL::action('SponsorController@show', array($sponsor->id)) }}"><span class="glyphicon glyphicon-eye-open"></span></a>
 							</div>
