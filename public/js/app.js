@@ -1,8 +1,17 @@
 $(document).ready(function(){
 	var attribution = "<a href='http://www.onmymind.com'>On My Mind®</a>"
-	
-	
-	$("#logo").fileinput({'showUpload':false});	
+
+	var urlLogo = $(document).find("#hLogo").val();
+	if(urlLogo != null && urlLogo != ''){
+		$("#logo").fileinput({
+			showUpload: false,
+			initialPreview: "<img src='/img/sponsors/" + urlLogo + "' class='file-preview-image'>",
+			initialCaption: urlLogo,
+			overwriteInitial: true
+		});
+	} else {
+		$("#logo").fileinput({'showUpload':false});	
+	}
 	
 	if(window.location.pathname === '/'){
 		var map = L.map('mapa');

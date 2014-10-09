@@ -46,6 +46,7 @@ class ComercializadoraController extends BaseController {
 			'ciudad' => 'required',
 			'telefono' => 'required'
 		);
+
 		$validator = Validator::make(Input::all(), $rules);
 		if($validator->passes()) {
 			$comercializadora = new Comercializadora;
@@ -56,8 +57,21 @@ class ComercializadoraController extends BaseController {
 			$comercializadora->estado = Input::get('estado');
 			$comercializadora->ciudad = Input::get('ciudad');
 			$comercializadora->telefono = Input::get('telefono');
-			$comercializadora->logo = Input::get('logo');
 			$comercializadora->url_compra = Input::get('url_compra');
+
+			// Creamos las variables si se manda una imagen
+			if(Input::hasFile('logo')){
+				$file = Input::file('logo');
+				$fileName = Input::file('logo')->getClientOriginalName();
+				// Comprobamos que sea una imagen valida
+				if($file->isValid()){
+					// Movemos la imagen a su carpeta destino
+					$file->move(public_path()."/img/comercializadoras", $fileName);
+					// Guardamos el nombre de la imagen en la base de datos
+					$comercializadora->logo = $fileName;
+				}
+			}
+			
 			$comercializadora->save();
 			// redirect
 			Session::flash('message', '¡Comercializadora agregada!');

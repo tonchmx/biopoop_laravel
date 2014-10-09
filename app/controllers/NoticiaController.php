@@ -43,12 +43,26 @@ class NoticiaController extends BaseController {
 			'nombre' => 'required',
 			'url_noticia' => 'required'
 		);
+
 		$validator = Validator::make(Input::all(), $rules);
 		if($validator->passes()) {
 			$noticia = new Noticia;
 			$noticia->nombre = Input::get('nombre');
 			$noticia->url_noticia = Input::get('url_noticia');
-			$noticia->logo = Input::get('logo');
+
+			// Creamos las variables si se manda una imagen
+			if(Input::hasFile('logo')){
+				$file = Input::file('logo');
+				$fileName = Input::file('logo')->getClientOriginalName();
+				// Comprobamos que sea una imagen valida
+				if($file->isValid()){
+					// Movemos la imagen a su carpeta destino
+					$file->move(public_path()."/img/noticias", $fileName);
+					// Guardamos el nombre de la imagen en la base de datos
+					$noticia->logo = $fileName;
+				}
+			}
+			
 			$noticia->save();
 			//redirect
 			Session::flash('message', '¡Nueva noticia agregada!');

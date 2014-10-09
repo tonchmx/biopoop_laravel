@@ -42,16 +42,29 @@ class SponsorController extends BaseController {
 		$rules = array(
 			'nombre' => 'required'
 		);
-
+		
 		$validator = Validator::make(Input::all(), $rules);
 		if($validator->passes()){
 			$sponsor = new Sponsor;
 			$sponsor->nombre = Input::get('nombre');
-			$sponsor->logo = Input::get('logo');
+			
+			//Creamos las variables si se manda una imagen
+			if(Input::hasFile('logo')){
+				$file = Input::file('logo');
+				$fileName = Input::file('logo')->getClientOriginalName();
+				// Comprobamos que sea una imagen valida
+				if($file->isValid()){
+					// Movemos la imagen a su carpeta destino
+					$file->move(public_path()."/img/sponsors", $fileName);
+					// Guardamos el nombre de la imagen en la base de datos
+					$sponsor->logo = $fileName;
+				}
+			}
+
 			$sponsor->save();
 			//redirect
 			Session::flash('message', '¡Nuevo sponsor agregado!');
-			return Redirect::action('SponsorController@index');
+			return Redirect::action('SponsorController@index');	
 		} else {
 			return Redirect::action('SponsorController@create')
 				->withErrors($validator)
@@ -69,7 +82,7 @@ class SponsorController extends BaseController {
 	public function show($id)
 	{
 		$sponsor = Sponsor::find($id);
-		return View::make('sponsor.mostrar')
+		return View::make('sponsors.mostrar')
 			->with('sponsor', $sponsor);
 	}
 
@@ -100,17 +113,36 @@ class SponsorController extends BaseController {
 			'nombre' => 'required'
 		);
 
+		//Creamos las variables si se manda una imagen
+		if(Input::hasFile('logo')){
+			$file = Input::file('logo');
+			$fileName = Input::file('logo')->getClientOriginalName();
+		}
+
 		$validator = Validator::make(Input::all(), $rules);
 		if($validator->passes()){
 			$sponsor = Sponsor::find($id);
 			$sponsor->nombre = Input::get('nombre');
-			$sponsor->logo = Input::get('logo');
-			$sponsor->save();
-			//redirect
-			Session::flash('message', '¡Sponsor editado!!');
-			return Redirect::action('SponsorController@index');
+			//Comprobamos que sea una imagen valida para poder guardar
+			if(isset($fileName)){
+				$sponsor->logo = $fileName;	
+				if($file->isValid()){
+					$file->move(public_path()."/img/sponsors", $fileName);
+					$sponsor->save();
+					//redirect
+					Session::flash('message', '¡Sponsor actualizado con imagen!');
+					return Redirect::action('SponsorController@index');	
+				}
+			} 
+			// Si no nos envian una imagen, guardamos normalmente
+			else {
+				$sponsor->save();
+				//redirect
+				Session::flash('message', '¡Sponsor actualizado sin imagen!');
+				return Redirect::action('SponsorController@index');	
+			}
 		} else {
-			return Redirect::action('SponsorController@create')
+			return Redirect::action('SponsorController@edit')
 				->withErrors($validator)
 				->withInput();
 		}

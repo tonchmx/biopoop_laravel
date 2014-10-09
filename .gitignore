@@ -46,3 +46,8 @@ com_crashlytics_export_strings.xml
 
 ### Vagrant ###
 .vagrant/
+
+### Imagenes de los controllers ###
+/public/img/noticias
+/public/img/comercializadoras
+/public/img/sponsors

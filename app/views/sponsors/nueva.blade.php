@@ -9,7 +9,7 @@
 				{{ HTML::url($errors->all()) }}
 			</div>
 		@endif
-		{{ Form::open(array('action' => "SponsorController@store")) }}
+		{{ Form::open(array('action' => "SponsorController@store", 'files'=>true, 'method' => 'post')) }}
 			<div class="form-group">
 				{{ Form::label('nombre', 'Nombre') }}
 				{{ Form::text('nombre', Input::old('nombre'), array('class' => 'form-control', 'placeholder' => 'Nombre')) }}

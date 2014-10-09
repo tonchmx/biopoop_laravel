@@ -11,7 +11,7 @@
 					{{ HTML::ul($errors->all()) }}	
 				</div>
 			@endif
-			{{ Form::open(array("action" => "ComercializadoraController@store"))}}
+			{{ Form::open(array("action" => "ComercializadoraController@store", 'files'=>true, 'method' => 'post'))}}
 				<div class="row">
 					<div class="form-group">
 						{{ Form::label('nombre', 'Nombre') }}

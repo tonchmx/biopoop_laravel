@@ -9,7 +9,7 @@
 				{{ HTML::ul($errors->all())}}
 			</div>
 		@endif
-		{{ Form::open(array("action" => "NoticiaController@store")) }}
+		{{ Form::open(array("action" => "NoticiaController@store", 'files'=>true, 'method' => 'post')) }}
 			<div class="form-group">
 				{{ Form::label('nombre', 'Nombre') }}
 				{{ Form::text('nombre', Input::old('nombre'), array('class' => 'form-control', 'placeholder' => 'Nombre')) }}
