@@ -1,6 +1,6 @@
 /* normalize.css v3.0.0 | MIT License | git.io/normalize */
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;position:relative;min-height: 100%}
-body{margin:0}
+body{margin:0;}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
 audio:not([controls]){display:none;height:0}
@@ -42,37 +42,25 @@ td,th{padding:0}
 @import url("http://fonts.googleapis.com/css?family=OpenSans");
 a:hover[href*="comprar"]{color:#e1ae33}
 .navbar-brand{padding:0 0 0 15px}
-.logo{height:51px}
+.logo{height:50px}
 body{padding-top:51px;font-family:'Open Sans',sans-serif;color:#3f393b}
-.footer{padding-top:.5em;text-align:center;color:#f8d545;background-color:#3f393b; position: absolute;bottom: 0;width: 100%; z-index: 20;}
+.footer{padding-top:.5em;text-align:center;color:#f8d545;background-color:#3f393b; position: relative;bottom: 0;width: 100%; z-index: 20;}
 .navbar-inverse .navbar-toggle .icon-bar{background-color:#f8d545}
 .navbar-inverse{border-color:#332e30}
 .btn-comprar{color:#f8d545;border-color:#f8d545;background-color:#3f393b}
 .btn-primario{color:#3f393b;border-color:#3f393b}
-.btn-primario:hover{background-color: #eee}
+.btn-primario:hover{background-color: rgba(255,255,255,0.5);}
 .navbar{background-color:#3f393b}
 .navbar-inverse .navbar-nav li a{color:#f8d545;}
 .navbar-inverse .navbar-nav li a:hover{color:#e1ae33}
-.como{text-align:center}
+.como{text-align:center;}
 .comprar{color:#fff;background-color:#3f393b;text-align:center;}
-.mapa{color:#fff;background-color:#3f393b;text-align:center;}
+
 .comprar .btn-comprar{background-color:#d9d6d7;color:#3f393b}
 .btn-comprar:hover{color:#e1ae33}
-.comprar .p1{background-color:#9f9b9d}
-.comprar .p2{background-color:#f8d545}
-.comprar table{color:#3f393b;background-color:#fff}
-.contacto{background-color:#fbfbfb;padding-bottom:1em}
-.contacto h2,.contacto h3{text-align:center}
-.gente{background-color:#fbfbfb;text-align:center;padding-bottom:1em}
-.jumbotron .home{text-align:center;}
-.jumbotron .home img{display:inline}
-.bgcolor {width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);}
-.video-container {position: relative;	padding-bottom: 56.25%;padding-top: 30px;height: 0;overflow: hidden;}
-.video-container iframe,  .video-container object,  .video-container embed {position: absolute;top: 0;left: 0;width: 100%;height: 100%}
-#donde_comprar h2{text-align: center}
-#mapa{height: 500px;}
-#mapaComercializadora{height: 85%;}
-.main{margin-bottom: 3%;}
+
+
+.site{margin-bottom: 3%;}
 .huge {font-size: 40px;}
 .panel-biopoop{border-color: #3f393b;}
 .panel-biopoop .panel-heading{ background-color: #fff; border-color: #3f393b; color: #3f393b}
@@ -91,3 +79,166 @@ body{padding-top:51px;font-family:'Open Sans',sans-serif;color:#3f393b}
 .nav-sidebar { margin-right: -21px;margin-bottom: 20px; margin-left: -20px; }
 .nav-sidebar > li > a { padding-right: 20px; padding-left: 20px; color:#3f393b;}
 .nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus { color: #fff; background-color: #428bca; }
+
+/**
+ * Splash
+ */
+
+/* background setup */
+.background {
+    background-repeat:no-repeat;
+    /* custom background-position */
+    background-position:50% 50%;
+    /* ie8- graceful degradation */
+    background-position:50% 50%9 !important;
+    background-image:url('/img/bg.jpg');
+    background-size: cover;
+}
+
+/* fullscreen setup */
+html, body {
+    /* give this to all tags from html to .fullscreen */
+    height:100%;
+}
+.fullscreen,
+.content-a {
+    width:100%;
+    min-height:100%;
+    background-color: rgba(255,255,255,0.30);
+}
+.not-fullscreen,
+.not-fullscreen .content-a,
+.fullscreen.not-overflow,
+.fullscreen.not-overflow .content-a {
+    height:100%;
+    overflow:hidden;
+}
+
+/* content centering styles */
+.content-a {
+    display:table;
+}
+.content-b {
+    display:table-cell;
+    position:relative;
+    vertical-align:middle;
+    text-align:center;
+}
+.content-a .container .row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+/* H's */
+h1{font-size: 4em;}
+h2{font-size: 3em;}
+h3{font-size: 2em;}
+
+/**
+ * Info
+ */
+
+/* Iconos */
+@font-face {
+   font-family: 'icomoon';
+   src:url('/fonts/icomoon.eot?-x1gvax');
+   src:url('/fonts/icomoon.eot?#iefix-x1gvax') format('embedded-opentype'),
+       url('/fonts/icomoon.woff?-x1gvax') format('woff'),
+       url('/fonts/icomoon.ttf?-x1gvax') format('truetype'),
+       url('/fonts/icomoon.svg?-x1gvax#icomoon') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-step4:before {
+    content: "\e600";
+}
+.icon-step3:before {
+    content: "\e601";
+}
+.icon-step2:before {
+    content: "\e602";
+}
+.icon-step1:before {
+    content: "\e603";
+}
+
+.como{padding-bottom: 1em;}
+.pasos{font-size: 150px;}
+.paso1{padding-top: 1em; background-color: #F1CF42}
+.paso2{padding-top: 1em; background-color: #FED739}
+.paso3{padding-top: 1em; background-color: #F1CF42}
+.paso4{padding-top: 1em; background-color: #FED739}
+@media (max-width: 768px) { .como {padding-bottom: 0em;} }
+
+
+/**
+ * People
+ */
+.gente{background: #3F393B;color: #CCCCCC;text-align:center;padding-bottom:1em}
+.video-container {position: relative;   padding-bottom: 56.25%;padding-top: 30px;height: 0;overflow: hidden;}
+.video-container iframe,  .video-container object,  .video-container embed {position: absolute;top: 0;left: 0;width: 100%;height: 100%}
+
+/**
+ * Mapa
+ */
+#donde_comprar h2{text-align: center}
+#donde_comprar{
+    padding-bottom: 1em;
+}
+#mapa{height: 500px;}
+#mapaComercializadora{height: 85%;} 
+
+
+/**
+ * Contact
+ */
+.contacto{background-color:#F1CF42;padding-top: 2em; padding-bottom: 1em;}
+.contacto h2,.contacto h3{text-align:left;margin-top: 0px;}
+.contacto .form-control{
+    --webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #3F393B;
+    border-radius: 5px;
+    color: #3F393B;
+}
+
+/**
+ * Titulos
+ */
+.title-wrapper{
+    display: table;
+    padding: 60px 0 20px 0px;
+    width: 100%;
+}
+.title{
+    display: table-row;
+}
+.title h2 {
+    width: 40%;
+    display: table-cell;
+    
+}
+.rule{
+    display: table-cell;
+    vertical-align: middle;
+}
+.title-wrapper hr{
+    border-top: 1px solid #3F393B;
+    margin: 0px;
+    padding: 0px;
+}
