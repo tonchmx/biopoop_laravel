@@ -12,4 +12,27 @@ class IndexController extends \BaseController {
 		return View::make('index');
 	}
 
+	public function getContactUsForm()
+	{
+		$data = $_POST;
+		if(isset($data['name']) && isset($data['email']) &&  isset($data['message'])){
+			// Enviamos el correo
+			Mail::send('email.contacto', $data, function($message) use ($data){
+				$message->from($data['email'], $data['name']);
+				$message->to('tonchmx@gmail.com');
+				$message->subject('Contacto');
+			});
+
+			// Enviamos un correo de confirmación a nuestro cliente
+			Mail::send('email.cliente', $data, function($message) use ($data) {
+				$message->from('tonchmx@hotmail.com', 'Biopoop®');
+				$message->to($data['email']);
+				$message->subject('¡Gracias por contactarnos!');
+			});
+			return Response::json(array('success' => true));
+		} else {
+			return Response::json(array('success' => false));
+		} 
+	}
+
 }

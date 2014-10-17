@@ -1,19 +1,48 @@
 $(document).ready(function(){
 
 
-	  $('a[href*=#]:not([href=#])').click(function() {
-	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	      if (target.length) {
-	        $('html,body').animate({
-	          scrollTop: target.offset().top
-	        }, 1000);
-	        return false;
-	      }
-	    }
-	  });
-	
+	$('a[href*=#]:not([href=#])').click(function() {
+	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	  var target = $(this.hash);
+	  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	  if (target.length) {
+	    $('html,body').animate({
+	      scrollTop: target.offset().top
+	    }, 1000);
+	    return false;
+	  }
+	}
+	});
+
+	// Contacto
+	$("#contactar").on("click", function(){
+		var nombre = $("#contactoNombre").val(),
+			email = $("#contactoEmail").val(),
+			asunto = $("#contactoAsunto").val(),
+			mensaje = $("#contactoMensaje").val();
+		var data = {
+			name: nombre,
+			email: email,
+			subject: asunto,
+			message: mensaje
+		};
+		// Enviamos la forma
+		$.ajax({
+			"url": "/contact",
+			"type": "POST",
+			"data": data,
+			"dataType": "json"
+		})
+			.done(function(response){
+				if(response.success){
+					$("#exito").fadeIn("slow");
+					$("#contactoNombre").val("");
+					$("#contactoEmail").val("");
+					$("#contactoAsunto").val("");
+					$("#contactoMensaje").val("");
+				}
+			});
+	});
 
 	/* fix vertical when not overflow
 	call fullscreenFix() if .fullscreen content changes */

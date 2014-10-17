@@ -12,24 +12,24 @@
 			</div>
 
 			<div class="col-sx-12 col-sm-6">
-				<form role="form">
+				<div id="exito" class="alert alert-warning" role="alert" style="display:none">
+					<h3>¡Gracias por contactarnos!</h3>
+				</div>
+				
 					<div class="form-group">
-						<input class="form-control" type="text" placeholder="Nombre">	
+						<input type="text" class="form-control" id="contactoNombre" placeholder="Nombre">
 					</div>
-					
 					<div class="form-group">
-						<input class="form-control" type="email" placeholder="Email">	
+						<input type="email" class="form-control" id="contactoEmail" placeholder="Email">
 					</div>
-
 					<div class="form-group">
-						<textarea class="form-control" rows="3" placeholder="Mensaje"></textarea>
+						<input type="text" class="form-control" id="contactoAsunto" placeholder="Asunto">
 					</div>
-					
-					
-					<button type="submit" class="btn btn-lg btn-comprar pull-right">
-						Enviar
-					</button>
-				</form>
+					<div class="form-group">
+						<textarea class="form-control" id="contactoMensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+					</div>
+					<button type="button" id="contactar" class="btn btn-lg btn-comprar pull-right">Enviar</button>
+				
 			</div>
 			
 		</div>
