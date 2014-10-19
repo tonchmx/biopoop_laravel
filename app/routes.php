@@ -11,7 +11,7 @@
 |
 */
 // PAGE
-Route::get('/', 'IndexController@index');	
+Route::get('/', 'IndexController@index');
 
 // CONTACT
 Route::post('contact', 'IndexController@getContactUsForm');

@@ -14,6 +14,18 @@ $(document).ready(function(){
 	}
 	});
 
+	// Galeria
+	$(".fancybox").fancybox({
+		helpers : {
+			title : {
+				type: 'inside'
+			},
+			overlay : {
+				locked: false
+			}
+		}
+	});
+
 	// Contacto
 	$("#contactar").on("click", function(){
 		var nombre = $("#contactoNombre").val(),

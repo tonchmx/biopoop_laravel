@@ -7,9 +7,12 @@
 <link rel="stylesheet" href="/css/leaflet.css" />
 <link rel="stylesheet" href="/css/estilos.css">
 <link rel="stylesheet" href="/css/fileinput.min.css">
+<link rel="stylesheet" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 <script src="/js/jquery-2.1.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/leaflet.js"></script>
 <script src="/js/fileinput.min.js"></script>
+<script src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 <script src="/js/app.js"></script>

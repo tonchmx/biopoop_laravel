@@ -9,7 +9,21 @@ class IndexController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('index');
+		/**
+		 * Obtenemos las fotos de instagram
+		 */
+		$url = "https://api.instagram.com/v1/tags/biopoop/media/recent?access_token=201595603.1fb234f.1f8228966895432097386c32e09d94ac";
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+		$result = curl_exec($ch);
+		curl_close($ch);
+		$fotos = json_decode($result);
+
+
+		return View::make('index')
+			->with(array('fotos'=>$fotos));
 	}
 
 	public function getContactUsForm()
@@ -34,5 +48,7 @@ class IndexController extends \BaseController {
 			return Response::json(array('success' => false));
 		} 
 	}
+
+	
 
 }

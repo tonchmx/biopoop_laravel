@@ -47,5 +47,16 @@
 				<div id="sponsors"></div>	
 			</div>
 		</div>
+		<div class="instagram">
+			<div class="container">
+				<h3>Algunos de nuestros felices clientes</h3>
+				@foreach($fotos->data as $foto)
+					<a class="fancybox" rel="group" title="Foto por: <a href='{{$foto->link}}' target='_blank'>{{$foto->user->full_name}}</a>" href="{{$foto->images->standard_resolution->url}}"><img src="{{ $foto->images->thumbnail->url }}" alt="" /></a>
+				@endforeach
+				<p>¡Usa el hashtag #biopoop en instagram para aparecer aquí!</p>
+			</div>
+			
+		</div>
+		
 	</div>
 </div>
