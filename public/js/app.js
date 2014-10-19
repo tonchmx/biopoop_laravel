@@ -162,7 +162,12 @@ $(document).ready(function(){
 		})
 			.done(function(response){
 				$.each(response, function(i, noticia){
-					$("#notasPeriodisticas").append(noticia.nombre);
+					var hNoticia = "<span class='periodico'>";
+					if(noticia.logo){
+						hNoticia += "<img src='/img/noticias/" + noticia.logo + "'>";
+					} else {hNoticia += noticia.nombre;}
+					hNoticia += "</span>"
+					$("#notasPeriodisticas").append(hNoticia);
 				});
 			});
 	}

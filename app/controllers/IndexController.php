@@ -19,13 +19,13 @@ class IndexController extends \BaseController {
 			// Enviamos el correo
 			Mail::send('email.contacto', $data, function($message) use ($data){
 				$message->from($data['email'], $data['name']);
-				$message->to('tonchmx@gmail.com');
+				$message->to('hola@biopoop.com.mx');
 				$message->subject('Contacto');
 			});
 
 			// Enviamos un correo de confirmación a nuestro cliente
 			Mail::send('email.cliente', $data, function($message) use ($data) {
-				$message->from('tonchmx@hotmail.com', 'Biopoop®');
+				$message->from('hola@biopoop.com.mx', 'Biopoop®');
 				$message->to($data['email']);
 				$message->subject('¡Gracias por contactarnos!');
 			});

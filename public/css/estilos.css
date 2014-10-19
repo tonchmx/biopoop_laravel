@@ -192,6 +192,8 @@ h3{font-size: 2em;}
 .gente{background: #3F393B;color: #CCCCCC;text-align:center;padding-bottom:1em}
 .video-container {position: relative;   padding-bottom: 56.25%;padding-top: 30px;height: 0;overflow: hidden;}
 .video-container iframe,  .video-container object,  .video-container embed {position: absolute;top: 0;left: 0;width: 100%;height: 100%}
+.periodico{ border: 1px solid black; margin:1em; padding: 1em;}
+.periodico img {max-height: 100px;}
 
 /**
  * Mapa
