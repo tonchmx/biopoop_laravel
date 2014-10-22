@@ -48,7 +48,7 @@
 				</div>
 				<a href="{{ URL::action('NoticiaController@index')}}">
 					<div class="panel-footer">
-						<span class="pull-left">Agregar</span>
+						<span class="pull-left">Ver Detalle</span>
 						<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 						<div class="clearfix"></div>
 					</div>
@@ -74,7 +74,7 @@
 				</div>
 				<a href="{{ URL::action('SponsorController@index') }}">
 					<div class="panel-footer">
-						<span class="pull-left">Agregar</span>
+						<span class="pull-left">Ver Detalle</span>
 						<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 						<div class="clearfix"></div>
 					</div>
