@@ -1,18 +1,45 @@
 $(document).ready(function(){
 
-
-	$('a[href*=#]:not([href=#])').click(function() {
-	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-	  var target = $(this.hash);
-	  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	  if (target.length) {
-	    $('html,body').animate({
-	      scrollTop: target.offset().top
-	    }, 1000);
-	    return false;
-	  }
-	}
+	// Menu
+	$("#menu").on("click", "a", null, function () {
+		if($("#menu").hasClass("in")){
+	    	$("#menu").collapse('hide');
+	    }
+	});	
+	
+	// Enlaces
+	$("#go_to_how").click(function(){
+		$.scrollTo($("#como"), 800, {offset:{top:-51}});
 	});
+	$("#go_to_people").click(function(){
+		$.scrollTo($("#gente"), 800, {offset:{top:-51}});
+	});
+	$("#go_to_buy").click(function(){
+		$.scrollTo($("#donde_comprar"), 800, {offset:{top:-51}});
+	});
+	$("#go_to_contact").click(function(){
+		$.scrollTo($("#contacto"), 800, {offset:{top:-51}})
+	});
+	$("#btn-contacto").click(function(){
+		$.scrollTo($("#contacto"), 800, {offset:{top:-51}})
+	});
+	// Cursor
+	$(".navbar-right")
+		.mouseenter(function(){
+            $("body").css({"cursor":"pointer"});
+        })
+        .mouseleave(function(){
+            $("body").css({"cursor":"default"});
+        });
+
+    // Botones del splash
+    $("#splash_go_to_buy").click(function(){
+    	$.scrollTo($("#donde_comprar"), 800, {offset:{top:-51}});
+    });
+
+    $("#splash_go_to_how").click(function(){
+    	$.scrollTo($("#como"), 800, {offset:{top:-51}});
+    });
 
 	// Galeria
 	$(".fancybox").fancybox({
@@ -29,31 +56,55 @@ $(document).ready(function(){
 	// Contacto
 	$("#contactar").on("click", function(){
 		var nombre = $("#contactoNombre").val(),
+			apellido = $("#contactoApellido").val(),
 			email = $("#contactoEmail").val(),
+			telefono = $("#contactoTelefono").val(),
 			asunto = $("#contactoAsunto").val(),
-			mensaje = $("#contactoMensaje").val();
+			mensaje = $("#contactoMensaje").val(),
+			error = false;
+
+		// Validaciones
+		if(!nombre){$("#contactoNombreError").css('display', 'block');error=true;}else{$("#contactoNombreError").css('display', 'none');}
+		if(!apellido){$("#contactoApellidoError").css('display', 'block');error=true;}else{$("#contactoApellidoError").css('display', 'none');}
+		if(!email){$("#contactoEmailError").css('display', 'block');error=true;}else{$("#contactoEmailError").css('display', 'none');}
+		if(asunto == '0'){$("#contactoAsuntoError").css('display', 'block');error=true;}else{$("#contactoAsuntoError").css('display', 'none');}
+		if(!mensaje){$("#contactoMensajeError").css('display', 'block');error=true;}else{$("#contactoMensajeError").css('display', 'none');}
+
 		var data = {
-			name: nombre,
+			firstname: nombre,
+			lastname: apellido,
 			email: email,
+			telephone: telefono,
 			subject: asunto,
 			message: mensaje
 		};
+
 		// Enviamos la forma
-		$.ajax({
-			"url": "/contact",
-			"type": "POST",
-			"data": data,
-			"dataType": "json"
-		})
-			.done(function(response){
-				if(response.success){
-					$("#exito").fadeIn("slow");
-					$("#contactoNombre").val("");
-					$("#contactoEmail").val("");
-					$("#contactoAsunto").val("");
-					$("#contactoMensaje").val("");
-				}
-			});
+		if(!error){
+			$.ajax({
+				"url": "/contact",
+				"type": "POST",
+				"data": data,
+				"dataType": "json"
+			})
+				.done(function(response){
+					if(response.success){
+						$("#exito").fadeIn("slow");
+						$("#contactoNombre").val("");
+						$("#contactoApellido").val("");
+						$("#contactoEmail").val("");
+						$("#contactoTelefono").val("");
+						$("#contactoAsunto").val("0");
+						$("#contactoMensaje").val("");
+						$("#contactoNombreError").css('display', 'none');
+						$("#contactoApellidoError").css('display', 'none');
+						$("#contactoEmailError").css('display', 'none');
+						$("#contactoAsuntoError").css('display', 'none');
+						$("#contactoMensajeError").css('display', 'none');
+						error=false;
+					}
+				});
+		}
 	});
 
 	/* fix vertical when not overflow
@@ -163,23 +214,7 @@ $(document).ready(function(){
 					if(comercializadora.url_compra != ""){
 						mensaje += "</br><a href='http://" + comercializadora.url_compra + "'>¡Compra directa!</a>"
 					}
-					marker.bindPopup(mensaje).openPopup();
-				});
-			});
-
-		$.ajax({
-			url: '/api/noticias',
-			type: 'GET',
-			dataType: 'json'
-		})
-			.done(function(response){
-				$.each(response, function(i, noticia){
-					var hNoticia = "<span class='periodico'>";
-					if(noticia.logo){
-						hNoticia += "<img src='/img/noticias/" + noticia.logo + "'>";
-					} else {hNoticia += noticia.nombre;}
-					hNoticia += "</span>"
-					$("#notasPeriodisticas").append(hNoticia);
+					marker.bindPopup(mensaje);
 				});
 			});
 	}
@@ -214,5 +249,4 @@ $(document).ready(function(){
 			$("#log").val(position.lng);
 		});
 	}
-	
 });

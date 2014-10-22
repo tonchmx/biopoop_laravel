@@ -28,13 +28,22 @@ class IndexController extends \BaseController {
 
 	public function getContactUsForm()
 	{
+		// $_POST
+		// firstname
+		// lastname
+		// email
+		// telephone
+		// subject
+		// message
+
 		$data = $_POST;
-		if(isset($data['name']) && isset($data['email']) &&  isset($data['message'])){
+		if(isset($data['firstname']) && isset($data['lastname']) && isset($data['email']) && isset($data['subject']) && isset($data['message'])){
 			// Enviamos el correo
 			Mail::send('email.contacto', $data, function($message) use ($data){
-				$message->from($data['email'], $data['name']);
+				$nombre = $data['firstname']. ' ' . $data['lastname'];
+				$message->from($data['email'], $nombre);
 				$message->to('hola@biopoop.com.mx');
-				$message->subject('Contacto');
+				$message->subject("biopoop:" . $data['subject']);
 			});
 
 			// Enviamos un correo de confirmación a nuestro cliente

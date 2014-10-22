@@ -7,9 +7,9 @@
 			<div>
 				<h3>¿No aparece tu ciudad en el mapa?</h3>
 				<p>
-					Estamos trabajando arduamente para lograr que Biopoop se venda en todas partes. Si tienes algún negocio o quieres ayudarnos vendiendo nuestro producto, porfavor contáctanos.
+					Estamos trabajando arduamente para lograr que biopoop® se venda en todas partes. Si tienes algún negocio o quieres ayudarnos vendiendo nuestro producto, porfavor contáctanos.
 				</p>
-				<a href="#contacto" class="btn btn-primario btn-lg" role="button" id="btn-contacto">
+				<a class="btn btn-primario btn-lg" role="button" id="btn-contacto">
 					Contáctanos
 				</a>	
 			</div>	

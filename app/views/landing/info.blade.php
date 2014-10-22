@@ -1,9 +1,13 @@
 <div class="como" id="como">
-	<br>
-	<br>
-	<br>
 	<div class="container">
-		<p>Biopoop promueve la limpieza del medio ambiente, a través de una bolsa de papel ecológica para deposito de heces caninas</p>
+		<div class="title-wrapper">
+			<div class="title">
+				<div class="rule"><hr></div>
+				<h2>¿Qué es?</h2>
+				<div class="rule"><hr></div>
+			</div>
+		</div>
+		<p>biopoop® es una marca que promueve hábitos de higiene ambiental, a través del uso de bolsas ecológicas de papel para recolección de desechos animaes en casa o durante el paseo.</p>
 		<div class="title-wrapper">
 			<div class="title">
 				<div class="rule"><hr></div>
@@ -11,12 +15,11 @@
 				<div class="rule"><hr></div>	
 			</div>	
 		</div>
-		
-		
+		<h3>¡Sólo en cuatro sencillos pasos!</h3>
 		<div class="row">
 			<div class="paso1 col-xs-12 col-sm-3">
 				<span class="icon-step1 pasos"></span>
-				<h3>Espera</h3>
+				<h3>Prepara</h3>
 			</div>
 			<div class="paso2 col-xs-12 col-sm-3">
 				<span class="icon-step2 pasos"></span>
@@ -30,6 +33,21 @@
 				<span class="icon-step4 pasos"></span>
 				<h3>Sigue</h3>
 			</div>
+		</div>
+		<div class="title-wrapper">
+			<div class="title">
+				<div class="rule"><hr></div>
+				<h2>Características</h2>
+				<div class="rule"><hr></div>	
+			</div>	
+		</div>
+		<div class="container" style="text-align:left;">
+			<ul>
+				<li>Bolsa modelo "pick-up", patentada.</li>
+				<li>Hecha de papel resistente a la humedad, creado únicamente para biopoop®</li>
+				<li>Consta de palas ensambladas a la bolsa que sirven para recoger los desechos animales he introducirlos a la misma.</li>
+				<li>Diseñada para evitar el contacto de las manos con desechos animales.</li>
+			</ul>	
 		</div>
 	</div>
 </div>

@@ -45,6 +45,7 @@ a:hover[href*="comprar"]{color:#e1ae33}
 .logo{height:50px}
 body{padding-top:51px;font-family:'Open Sans',sans-serif;color:#3f393b}
 .footer{padding-top:.5em;text-align:center;color:#f8d545;background-color:#3f393b; position: relative;bottom: 0;width: 100%; z-index: 20;}
+.footer .linkfooter{color: #8D999F;}
 .navbar-inverse .navbar-toggle .icon-bar{background-color:#f8d545}
 .navbar-inverse{border-color:#332e30}
 .btn-comprar{color:#f8d545;border-color:#f8d545;background-color:#3f393b}
@@ -218,13 +219,14 @@ h3{font-size: 2em;}
     border-radius: 5px;
     color: #3F393B;
 }
+.contacto a {color: #3F393B;}
 
 /**
  * Titulos
  */
 .title-wrapper{
     display: table;
-    padding: 60px 0 20px 0px;
+    padding: 20px 0 20px 0px;
     width: 100%;
 }
 .title{

@@ -1,8 +1,17 @@
 <?php
 
 // Obtenemos los datos del correo
-$name = Input::get('name');
+// firstname
+// lastname
+// email
+// telephone
+// subject
+// message
+$firstname = Input::get('firstname');
+$lastname = Input::get('lastname');
+$name = $firstname . ' ' . $lastname;
 $email = Input::get('email');
+$telephone = Input::get('telephone');
 $subject = Input::get('subject');
 $message = Input::get('message');
 ?>
@@ -604,6 +613,9 @@ $message = Input::get('message');
 <ul>
 	<li>Tu cliente se llama <?php echo $name;?></li>
 	<li>Su correo es: <?php echo $email;?></li>
+	<?php if($telephone != ''){ ?>
+		<li>Su teléfono es: <?php echo $telephone;?></li>
+	<?php }?>
 </ul>
 El o ella les comenta lo siguiente:
                         </td>
