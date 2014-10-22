@@ -8,6 +8,15 @@
 			</div>
 		</div>
 		<p>biopoop® es una marca que promueve hábitos de higiene ambiental, a través del uso de bolsas ecológicas de papel para recolección de desechos animaes en casa o durante el paseo.</p>
+	</div>
+	<div id="slogan">
+		<h2>Las <strong>heces no</strong> distinguen <strong>raza</strong>, ni <strong>lugar</strong></h2>
+		<div class="bone">
+			<h1>¡Recógelas!</h1>	
+		</div>
+		
+	</div>
+	<div class="container">
 		<div class="title-wrapper">
 			<div class="title">
 				<div class="rule"><hr></div>
