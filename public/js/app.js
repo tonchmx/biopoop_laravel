@@ -174,7 +174,9 @@ $(document).ready(function(){
 	}
 	
 	if(window.location.pathname === '/'){
-		var map = L.map('mapa');
+		var map = L.map('mapa',{
+			scrollWheelZoom: false
+		});
 
 		function success(pos) {
 		  var crd = pos.coords;
