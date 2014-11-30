@@ -1,4 +1,5 @@
 <div class="como" id="como">
+	<h2 class="hidden-sm hidden-md hidden-lg">Bolsa de papel ecológica para recoger heces caninas</h2>
 	<div class="container">
 		<div class="title-wrapper">
 			<div class="title">

@@ -4,7 +4,8 @@
             <div class="container">
             	<div class="row">
             		<div class="info">
-            			<h1>Bolsa de papel ecológica para recoger heces caninas</h1>
+            			<h1 class="hidden-xs">Bolsa de papel ecológica para recoger heces caninas</h1>
+                        <img src="/img/logo-t.png" class="img-responsive hidden-sm hidden-md hidden-lg">
             			<div class="row">
             				<a id="splash_go_to_buy" class="btn btn-comprar btn-lg col-xs-5">
             					Comprar

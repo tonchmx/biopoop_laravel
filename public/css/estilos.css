@@ -1,6 +1,6 @@
 /* normalize.css v3.0.0 | MIT License | git.io/normalize */
-html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;position:relative;min-height: 100%}
-body{margin:0;font-size: 14px}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;position:relative;min-height: 100%;}
+body{margin:0;font-size: 14px; font-weight: 300 !important}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
 audio:not([controls]){display:none;height:0}
@@ -10,7 +10,7 @@ a:active,a:hover{outline:0}
 abbr[title]{border-bottom:1px dotted}
 b,strong{font-weight:bold}
 dfn{font-style:italic}
-h1{font-size:2em;margin:.67em 0}
+h1{font-size:2em;margin:.67em 0; font-weight: 400 !important}
 mark{background:#ff0;color:#000}
 small{font-size:80%}
 sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
@@ -49,8 +49,8 @@ body{padding-top:51px;font-family:'Open Sans',sans-serif;color:#3f393b}
 .navbar-inverse .navbar-toggle .icon-bar{background-color:#f8d545}
 .navbar-inverse{border-color:#332e30}
 .btn-comprar{color:#f8d545;border-color:#f8d545;background-color:#3f393b}
-.btn-primario{color:#3f393b;border-color:#3f393b}
-.btn-primario:hover{background-color: rgba(255,255,255,0.5);}
+.btn-primario{color:#3f393b;border-color:#3f393b; background-color: rgba(255,255,255,0.4);}
+.btn-primario:hover{background-color: rgba(255,255,255,0.6);}
 .navbar{background-color:#3f393b}
 .navbar-inverse .navbar-nav li a{color:#f8d545;}
 .navbar-inverse .navbar-nav li a:hover{color:#e1ae33}
@@ -140,9 +140,9 @@ html, body {
 }
 
 /* H's */
-h1{font-size: 4em;}
-h2{font-size: 3em;}
-h3{font-size: 2em;}
+h1{font-size: 4em;font-weight: 300 !important}
+h2{font-size: 3em;font-weight: 300 !important}
+h3{font-size: 2em;font-weight: 300 !important}
 
 /**
  * Info
@@ -201,8 +201,9 @@ h3{font-size: 2em;}
 .bone h1{
     background-image: url("/img/bone.png"); 
     background-repeat: no-repeat;
-    background-size: 350px;
+    background-size: 320px;
     background-position: center;
+    font-size: 3.6em;
     height: 200px;
     padding-top: 73px;
     margin-top: 10px;
@@ -267,4 +268,10 @@ h3{font-size: 2em;}
     border-top: 1px solid #3F393B;
     margin: 0px;
     padding: 0px;
+}
+
+@media(max-width: 763px){
+    #como > .container > .title-wrapper > .title > .rule{
+        width: 10%;
+    }    
 }
